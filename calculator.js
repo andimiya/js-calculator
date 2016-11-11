@@ -97,6 +97,12 @@ function calculatorModule () {
   /**
    * Validation
    */
+
+  if (x !== 'string') {
+
+  };
+
+
   return {
     load: load,
     getTotal: getTotal,
