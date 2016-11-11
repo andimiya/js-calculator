@@ -108,7 +108,7 @@ function calculatorModule () {
    */
   function validation (x) {
     if (Number.isInteger(x)) {
-      console.log('yes');
+
     }
     else {
       return error();
