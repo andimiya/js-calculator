@@ -20,8 +20,12 @@ function calculatorModule () {
    */
   function load(x) {
     _total = x;
+    if (isNan(x)) {
+      return false;
+    }
     return _total;
   }
+  load(6);
 
   /**
    * Return the value of `total`
@@ -98,9 +102,7 @@ function calculatorModule () {
    * Validation
    */
 
-  if (x !== 'string') {
 
-  };
 
 
   return {
