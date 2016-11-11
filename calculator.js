@@ -13,19 +13,19 @@ function calculatorModule () {
   let _total = 0;
 
 
+
+
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
+
   function load(x) {
+    validation(x);
     _total = x;
-    if (isNan(x)) {
-      return false;
-    }
     return _total;
   }
-  load(6);
 
   /**
    * Return the value of `total`
@@ -42,7 +42,9 @@ function calculatorModule () {
    */
 
   function add(x){
+    validation(x);
     return _total += x;
+
   }
 
   /**
@@ -51,6 +53,7 @@ function calculatorModule () {
    */
 
   function subtract(x){
+    validation(x);
     return _total -= x;
   }
 
@@ -61,6 +64,7 @@ function calculatorModule () {
    */
 
   function multiply(x){
+    validation(x);
     return _total *= x;
   }
 
@@ -70,6 +74,7 @@ function calculatorModule () {
    */
 
   function divide(x){
+    validation(x);
     return _total /= x;
   }
 
@@ -101,8 +106,14 @@ function calculatorModule () {
   /**
    * Validation
    */
-
-
+  function validation (x) {
+    if (Number.isInteger(x)) {
+      console.log('yes');
+    }
+    else {
+      return error();
+    }
+  }
 
 
   return {
