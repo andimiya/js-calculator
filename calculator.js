@@ -6,25 +6,40 @@
  * @return {object} `calculator` object that can be used
  */
 
+function calculatorModule () {
+
+  // Private variables
+  let _memory = 0;
+  let _total = 0;
+
 
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
-
+   function load(x) {
+      _total = x;
+      return _total;
+   }
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
 
+   function getTotal(){
+    return _total;
+   }
 
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
 
+   function add(number){
+    console.log(_total + number);
+   }
 
   /**
    * Subtracts the value passed in from `total`
@@ -62,4 +77,9 @@
   /**
    * Validation
    */
-
+  return {
+    load: load,
+    getTotal: getTotal,
+    add: add,
+  };
+}
