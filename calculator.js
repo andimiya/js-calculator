@@ -82,11 +82,17 @@ function calculatorModule () {
    * Stores the value of `total` to `memory`
    */
 
-  var _memory = _total;
+  function saveMemory(){
+    _memory = _total;
+  }
 
   /**
    * Clear the value stored at `memory`
    */
+
+  function clearMemory(){
+    _memory = 0;
+  }
 
   /**
    * Validation
@@ -99,6 +105,7 @@ function calculatorModule () {
     multiply: multiply,
     divide: divide,
     recallMemory: recallMemory,
-    _memory: _total,
+    saveMemory: saveMemory,
+    clearMemory: clearMemory,
   };
 }
